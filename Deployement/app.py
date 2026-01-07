@@ -11,7 +11,9 @@ st.set_page_config(
 # DATA LAYER
 @st.cache_data
 def load_raw():
-    df = pd.read_parquet("DHL_Project.parquet")
+    # Direct GitHub raw URL to your parquet (upload as release asset)
+    url = "https://github.com/Yogeswarachary/DHL_Inventory_Project/blob/main/Data/DHL_Project.parquet"
+    df = pd.read_parquet(url)
     return df
 
 @st.cache_data
